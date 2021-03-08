@@ -1,0 +1,53 @@
+@PART[ROE-HG3]:NEEDS[Waterfall]:FOR[zzzWaterfall_RO]
+{
+    MODULE
+    {
+        name = ModuleWaterfallFX
+        moduleID = roe_hg-3
+        engineID = basicEngine
+        CONTROLLER
+        {
+            name = atmosphereDepth
+            linkedTo = atmosphere_density
+        }
+        CONTROLLER
+        {
+            name = throttle
+            linkedTo = throttle
+        }
+        CONTROLLER
+        {
+            name = random
+            linkedTo = random
+            range = -1,1
+        }
+        TEMPLATE
+        {
+            templateName = waterfall-hydrolox-upper-1
+            overrideParentTransform = J-2-ThrustTransform
+            position = 0,0,1.54
+            rotation = 0, 0, 0
+            scale = 1.7, 1.7, 1.7
+        }
+    }
+
+    MODULE
+    {
+        name = ModuleWaterfallFX
+        moduleID = roe_hg-3_glow
+        engineID = basicEngine
+        CONTROLLER
+        {
+            name = throttle
+            linkedTo = throttle
+        }
+        TEMPLATE
+        {
+            templateName = waterfall-nozzle-glow-blue-1
+            overrideParentTransform = J-2-ThrustTransform
+            position = 0,0,1.54
+            rotation = 0, 0, 0
+            scale = 1.68, 1.7, 1.7
+        }
+    }
+}
